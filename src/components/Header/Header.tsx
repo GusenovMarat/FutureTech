@@ -4,8 +4,10 @@ import HeaderTop from "../HeaderTop/HeaderTop";
 const Header = () => {
   return (
     <header className="header">
-			<HeaderTop />
-			<HeaderBottom />
+      <div className="header-container">
+        <HeaderTop />
+			  <HeaderBottom />
+      </div>
 		</header>
   )
 }

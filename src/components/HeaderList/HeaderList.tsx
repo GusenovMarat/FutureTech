@@ -1,10 +1,17 @@
-const HeaderList = () => {
+interface HeaderListProps {
+	isBold?: boolean
+	children: React.ReactNode
+}
+
+const HeaderList = ({isBold = false, children}: HeaderListProps) => {
   return (
     <ul className ="header-list">
-			<li className="header-item">home</li>
-			<li className="header-item">news</li>
-			<li className="header-item">podcasts</li>
-			<li className="header-item">resourses</li>
+			<li
+				className="header-item"
+				style={{fontWeight: isBold ? "bold": "normal"}}
+			>
+				{children}
+			</li>
 		</ul>
   )
 }

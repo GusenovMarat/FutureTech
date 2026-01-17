@@ -1,0 +1,24 @@
+@mixin font-face($font-name, $path, $fw: normal, $fs: normal)  {
+	@font-face {
+		font-family: $font-name;
+    src: 
+			url('@/assets/fonts/#{$path}.woff') format('woff'),
+			url('@/assets/fonts/#{$path}.woff2') format('woff2');
+		font-weight: $fw;
+		font-style: $fs;
+		font-display: swap;
+	}
+}
+
+@mixin font-material($font-name, $path, $fw: normal, $fs: normal)  {
+	@font-face {
+		font-family: $font-name;
+    src: 
+			url('@fonts/#{$path}.woff') format('woff'),
+			url('@fonts/#{$path}.woff2') format('woff2'),
+			url('@fonts/#{$path}.svg##{$path}') format('svg');
+		font-weight: $fw;
+		font-style: $fs;
+		font-display: swap;
+	}
+}

@@ -1,19 +1,15 @@
 interface HeaderListProps {
-	isBold?: boolean
-	children: React.ReactNode
+  items: React.ReactNode[];
 }
 
-const HeaderList = ({isBold = false, children}: HeaderListProps) => {
-  return (
-    <ul className ="header-list">
-			<li
-				className="header-item"
-				style={{fontWeight: isBold ? "bold": "normal"}}
-			>
-				{children}
-			</li>
-		</ul>
-  )
-}
+const HeaderList = ({ items }: HeaderListProps) => (
+  <ul className="header-list">
+    {items.map((item, index) => (
+      <li key={index} className="header-item">
+        {item}
+      </li>
+    ))}
+  </ul>
+);
 
 export default HeaderList;
